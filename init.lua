@@ -7,7 +7,10 @@ minetest.register_node('conway_game_of_life:live_cell', {
 	light_source = 3,
 	on_timer = function(pos)
 		minetest.set_node(pos, {name = 'conway_game_of_life:dead_cell'})
-	end
+	end,
+	on_rightclick = function(pos)
+		minetest.set_node(pos, {name = 'conway_game_of_life:dead_cell'})
+	end,
 })
 minetest.register_node('conway_game_of_life:dead_cell', {
 	description = 'dead_cell',
@@ -17,7 +20,10 @@ minetest.register_node('conway_game_of_life:dead_cell', {
 	drop = 'conway_game_of_life:dead_cell',
 	on_timer = function(pos)
 		minetest.set_node(pos, {name = 'conway_game_of_life:live_cell'})
-	end
+	end,
+	on_rightclick = function(pos)
+		minetest.set_node(pos, {name = 'conway_game_of_life:live_cell'})
+	end,
 })
 
 local lifegame = true
